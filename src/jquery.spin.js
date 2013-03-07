@@ -3,13 +3,22 @@
  * https://github.com/tdoherty/jQuery.SpinJS
  *
  * a jquery plugin for spin.js - http://fgnass.github.com/spin.js/
- * - inserts a loading background with configurable color and opacity
+ * - adds a loading background to the specified element with configurable color and opacity
  *
  * Copyright (c) 2013 tdoherty
  * Licensed under the MIT license.
  */
 
-(function($) {
+//AMD support - works with or without AMD
+(function (factory) {
+if (typeof define === 'function' && define.amd) {
+    // AMD. Register as an anonymous module.
+    define(['jquery', 'spin'], factory);
+} else {
+    // Browser globals
+    factory(jQuery, Spinner);
+}
+}(function($, Spinner) {
 
   $.fn.spin = function (opts) {
     //spin.js opts
@@ -59,8 +68,7 @@
         'height': $this.outerHeight() === 0 ? '100%' : $this.outerHeight()
       });
 
-//      delete opts.bgColor;
-//      delete opts.opacity;
+      //call spin.js
       $data.spinner = new Spinner(opts).spin(this);
 
       $bgEl.prependTo($this).show();
@@ -68,4 +76,4 @@
     return this;
   };
 
-}(jQuery));
+}));

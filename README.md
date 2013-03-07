@@ -12,13 +12,31 @@ In your web page:
 
 ```html
 <script src="libs/spin/spin.js"></script>
-<script src="jquery.js"></script>
+<script src="libs/jquery/jquery.js"></script>
 <script src="dist/jquery.spin.min.js"></script>
 <script>
 jQuery(function($) {
   $('.className').spin(); // show the spinner
   $('.className').spin(false); // stop the spinner
 });
+</script>
+```
+- or with optional AMD support:
+
+```html
+<script src="libs/requirejs/require.js"></script>
+<script>
+requirejs.config({
+  paths: {
+    'jquery': 'libs/jquery/jquery',
+    'spin': 'libs/spin/spin'
+  }
+});
+require(['jquery', 'dist/jquery.spin.min'], function ($) {
+  $('.className').spin(); // show the spinner
+  $('.className').spin(false); // stop the spinner
+});
+
 </script>
 ```
 
