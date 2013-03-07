@@ -1,0 +1,27 @@
+{
+  "name": "jquery.spin",
+  "title": "jQuery Spin",
+  "description": "A jQuery plugin for Spin.js",
+  "version": "0.0.1",
+  "homepage": "https://github.com/tdoherty/jQuery.SpinJS",
+  "author": {
+    "name": "tdoherty",
+    "email": "tim@dohertycomputing.com",
+    "url": "http://dohertycomputing.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/tdoherty/jQuery.SpinJS.git"
+  },
+  "bugs": "https://github.com/tdoherty/jQuery.SpinJS/issues",
+  "licenses": [
+    {
+      "type": "MIT",
+      "url": "https://github.com/tdoherty/jQuery.SpinJS/blob/master/LICENSE-MIT"
+    }
+  ],
+  "dependencies": {
+    "jquery": "*"
+  },
+  "keywords": []
+}
