@@ -15,28 +15,27 @@ In your web page:
 <script src="libs/jquery/jquery.js"></script>
 <script src="dist/jquery.spin.min.js"></script>
 <script>
-jQuery(function($) {
-  $('.className').spin(); // show the spinner
-  $('.className').spin(false); // stop the spinner
-});
+  jQuery(function($) {
+    $('.className').spin(); // show the spinner
+    $('.className').spin(false); // stop the spinner
+  });
 </script>
 ```
-- or with optional AMD support:
+- or with optional AMD support, add an alias 'spin' to spin.js:
 
 ```html
 <script src="libs/requirejs/require.js"></script>
 <script>
-requirejs.config({
-  paths: {
-    'jquery': 'libs/jquery/jquery',
-    'spin': 'libs/spin/spin'
-  }
-});
-require(['jquery', 'dist/jquery.spin.min'], function ($) {
-  $('.className').spin(); // show the spinner
-  $('.className').spin(false); // stop the spinner
-});
-
+  requirejs.config({
+    paths: {
+      'jquery': 'libs/jquery/jquery',
+      'spin': 'libs/spin/spin'
+    }
+  });
+  require(['jquery', 'dist/jquery.spin.min'], function ($) {
+    $('.className').spin(); // show the spinner
+    $('.className').spin(false); // stop the spinner
+  });
 </script>
 ```
 
