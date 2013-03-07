@@ -11,11 +11,13 @@ Download the [production version][min] or the [development version][max].
 In your web page:
 
 ```html
+<script src="libs/spin/spin.js"></script>
 <script src="jquery.js"></script>
 <script src="dist/jquery.spin.min.js"></script>
 <script>
 jQuery(function($) {
-  $.awesome(); // "awesome"
+  $('.className').spin(); // show the spinner
+  $('.className').spin(false); // stop the spinner
 });
 </script>
 ```
