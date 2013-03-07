@@ -1,7 +1,16 @@
 /*! jQuery Spin - v0.0.1 - 2013-03-07
 * https://github.com/tdoherty/jQuery.SpinJS
 * Copyright (c) 2013 tdoherty; Licensed MIT */
-(function($) {
+//AMD support - works with or without AMD
+(function (factory) {
+if (typeof define === 'function' && define.amd) {
+    // AMD. Register as an anonymous module.
+    define(['jquery', 'spin'], factory);
+} else {
+    // Browser globals
+    factory(jQuery, Spinner);
+}
+}(function($, Spinner) {
 
   $.fn.spin = function (opts) {
     //spin.js opts
@@ -51,8 +60,7 @@
         'height': $this.outerHeight() === 0 ? '100%' : $this.outerHeight()
       });
 
-//      delete opts.bgColor;
-//      delete opts.opacity;
+      //call spin.js
       $data.spinner = new Spinner(opts).spin(this);
 
       $bgEl.prependTo($this).show();
@@ -60,4 +68,4 @@
     return this;
   };
 
-}(jQuery));
+}));
