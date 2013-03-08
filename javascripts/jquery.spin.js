@@ -70,7 +70,7 @@ if (typeof define === 'function' && define.amd) {
       //call spin.js
       $data.spinner = new Spinner(opts).spin(this);
 
-      $bgEl.appendTo($this).show();
+      $bgEl.prependTo($this).show();
     });
     return this;
   };
