@@ -1,62 +1,132 @@
 <!DOCTYPE html>
 <html>
-  <head>
+<head>
     <meta charset='utf-8'>
     <meta http-equiv="X-UA-Compatible" content="chrome=1">
 
-    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen" />
-    <link rel="stylesheet" type="text/css" href="stylesheets/pygment_trac.css" media="screen" />
-    <link rel="stylesheet" type="text/css" href="stylesheets/print.css" media="print" />
+    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen"/>
+    <link rel="stylesheet" type="text/css" href="stylesheets/pygment_trac.css" media="screen"/>
+    <link rel="stylesheet" type="text/css" href="stylesheets/print.css" media="print"/>
 
     <title>Jquery.spinjs by tdoherty</title>
-  </head>
 
-  <body>
+    <style>
+        .spinDemo {
+            background-color: white;
+            height: 200px;
+            width: 200px;
+            color: black;
+            font-size: 8pt;
+            padding: 3px;
+        }
+    </style>
+</head>
 
-    <header>
-      <div class="container">
+<body>
+
+<header>
+    <div class="container">
         <h1>Jquery.spinjs</h1>
+
         <h2>jquery plugin for spin.js</h2>
 
         <section id="downloads">
-          <a href="https://github.com/tdoherty/jQuery.SpinJS/zipball/master" class="btn">Download as .zip</a>
-          <a href="https://github.com/tdoherty/jQuery.SpinJS/tarball/master" class="btn">Download as .tar.gz</a>
-          <a href="https://github.com/tdoherty/jQuery.SpinJS" class="btn btn-github"><span class="icon"></span>View on GitHub</a>
+            <a href="https://github.com/tdoherty/jQuery.SpinJS/zipball/master" class="btn">Download as .zip</a>
+            <a href="https://github.com/tdoherty/jQuery.SpinJS/tarball/master" class="btn">Download as .tar.gz</a>
+            <a href="https://github.com/tdoherty/jQuery.SpinJS" class="btn btn-github"><span class="icon"></span>View on
+                GitHub</a>
         </section>
-      </div>
-    </header>
-
-    <div class="container">
-      <section id="main_content">
-        <h3>Welcome to GitHub Pages.</h3>
-
-<p>This automatic page generator is the easiest way to create beautiful pages for all of your projects. Author your page content here using GitHub Flavored Markdown, select a template crafted by a designer, and publish. After your page is generated, you can check out the new branch:</p>
-
-<pre><code>$ cd your_repo_root/repo_name
-$ git fetch origin
-$ git checkout gh-pages
-</code></pre>
-
-<p>If you're using the GitHub for Mac, simply sync your repository and you'll see the new branch.</p>
-
-<h3>Designer Templates</h3>
-
-<p>We've crafted some handsome templates for you to use. Go ahead and continue to layouts to browse through them. You can easily go back to edit your page before publishing. After publishing your page, you can revisit the page generator and switch to another theme. Your Page content will be preserved if it remained markdown format.</p>
-
-<h3>Rather Drive Stick?</h3>
-
-<p>If you prefer to not use the automatic generator, push a branch named <code>gh-pages</code> to your repository to create a page manually. In addition to supporting regular HTML content, GitHub Pages support Jekyll, a simple, blog aware static site generator written by our own Tom Preston-Werner. Jekyll makes it easy to create site-wide headers and footers without having to copy them across every page. It also offers intelligent blog support and other advanced templating features.</p>
-
-<h3>Authors and Contributors</h3>
-
-<p>You can <a href="https://github.com/blog/821" class="user-mention">@mention</a> a GitHub username to generate a link to their profile. The resulting <code>&lt;a&gt;</code> element will link to the contributor's GitHub Profile. For example: In 2007, Chris Wanstrath (<a href="https://github.com/defunkt" class="user-mention">@defunkt</a>), PJ Hyett (<a href="https://github.com/pjhyett" class="user-mention">@pjhyett</a>), and Tom Preston-Werner (<a href="https://github.com/mojombo" class="user-mention">@mojombo</a>) founded GitHub.</p>
-
-<h3>Support or Contact</h3>
-
-<p>Having trouble with Pages? Check out the documentation at <a href="http://help.github.com/pages">http://help.github.com/pages</a> or contact <a href="mailto:support@github.com">support@github.com</a> and we’ll help you sort it out.</p>
-      </section>
     </div>
+</header>
 
-    
-  </body>
+<div class="container">
+    <section id="main_content">
+        <h3>spin.jquery.js</h3>
+
+        <div class="spinDemo one" style="margin-left: 200px;">
+            Whatever blog deep v, mlkshk 8-bit you probably haven't heard of them forage put a bird on it photo booth fap gentrify. Carles artisan pop-up, freegan fixie wayfarers tofu terry richardson post-ironic meh polaroid skateboard stumptown. Jean shorts aesthetic pitchfork single-origin coffee. Brooklyn authentic chillwave salvia fashion axe locavore,
+        </div>
+
+        <p>
+            This is a jQuery plugin to wrap  Felix Gnass' excellent <a href="http://fgnass.github.com/spin.js/" target="_blank">spin.js</a>
+        </p>
+
+        <p>
+            The plugin takes additional options for color and transparency of a background div which is added to the target element.
+        </p>
+
+        Standard usage:
+    <pre><code>
+    &lt;script src="libs/spin/spin.js"&gt;&lt;/script&gt;
+    &lt;script src="libs/jquery/jquery.js"&gt;&lt;/script&gt;
+    &lt;script src="dist/jquery.spin.min.js"&gt;&lt;/script&gt;
+    &lt;script&gt;
+      jQuery(function($) {
+        $('.className').spin(); // show the spinner
+        $('.className').spin(false); // stop the spinner
+      });
+    &lt;/script&gt;
+    </code></pre>
+
+        With AMD (RequireJS here):
+    <pre><code>
+    &lt;script src="libs/require/require.js"&gt;&lt;/script&gt;
+    &lt;script&gt;
+      requirejs.config({
+        paths: {
+          'jquery': 'libs/jquery/jquery',
+          'spin': 'libs/spin/spin'
+        }
+      });
+      require(['jquery', 'dist/jquery.spin.min'], function ($) {
+        $('.className').spin(); // show the spinner
+        $('.className').spin(false); // stop the spinner
+      });
+    &lt;/script&gt;
+    </code></pre>
+
+    Examples:
+
+
+    <pre><code>
+    $('.spinDemo.two').spin({
+      lines: 13,
+      length: 0,
+      radius: 38,
+      bgColor: 'yellow',
+      color: 'purple',
+      opacity: 4,
+      speed: 0.8,
+      corners: 1.0
+    });
+    </code></pre>
+        <div class="spinDemo two" style="margin-left: 200px;">
+            Whatever blog deep v, mlkshk 8-bit you probably haven't heard of them forage put a bird on it photo booth fap gentrify. Carles artisan pop-up, freegan fixie wayfarers tofu terry richardson post-ironic meh polaroid skateboard stumptown. Jean shorts aesthetic pitchfork single-origin coffee. Brooklyn authentic chillwave salvia fashion axe locavore,
+        </div>
+
+    <pre><code>
+    $('.spinDemo.two').spin({
+        lines: 17,
+        bgColor: 'blue',
+        color: 'green',
+        opacity: 7,
+        length: 30,
+        width: 6,
+        corners: 1.0,
+        trail: 62,
+        speed: 1.8,
+        hwaccel: true
+    });
+    </code></pre>
+        <div class="spinDemo three" style="margin-left: 200px;">
+            Whatever blog deep v, mlkshk 8-bit you probably haven't heard of them forage put a bird on it photo booth fap gentrify. Carles artisan pop-up, freegan fixie wayfarers tofu terry richardson post-ironic meh polaroid skateboard stumptown. Jean shorts aesthetic pitchfork single-origin coffee. Brooklyn authentic chillwave salvia fashion axe locavore,
+        </div>
+
+        <div style="clear:both;margin-bottom:50px;"></div>
+
+    </section>
+</div>
+
+<script src="javascripts/require.js" data-main="javascripts/main"></script>
+</body>
 </html>
