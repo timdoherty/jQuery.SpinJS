@@ -1,4 +1,20 @@
-(function($) {
+//(function($) {
+
+//testing AMD support
+require.config({
+  paths:{
+    'jquery':'../libs/jquery/jquery',
+    'spin':'../libs/spin/spin',
+    'qunit': '../libs/qunit/qunit'
+  }
+});
+
+require(
+  [
+    'jquery',
+    '../src/jquery.spin'
+  ], function ($) {
+
 
   /*
     ======== A Handy Little QUnit Reference ========
@@ -20,6 +36,7 @@
       notStrictEqual(actual, expected, [message])
       throws(block, [expected], [message])
   */
+//  QUnit.start();
 
   module('jQuery#spin', {
     // This will run before each test in this module.
@@ -62,5 +79,7 @@
 //    deepEqual(this.elems.filter(':awesome').get(), this.elems.last().get(), 'knows awesome when it sees it');
 //  });
 
+  }
+);
 
-}(jQuery));
+//}(jQuery));

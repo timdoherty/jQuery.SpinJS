@@ -1,4 +1,4 @@
-/*! jQuery Spin - v0.0.1 - 2013-03-07
+/*! jQuery Spin - v0.0.1 - 2013-03-08
 * https://github.com/tdoherty/jQuery.SpinJS
 * Copyright (c) 2013 tdoherty; Licensed MIT */
 //AMD support - works with or without AMD
