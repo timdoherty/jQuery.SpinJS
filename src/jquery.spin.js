@@ -65,7 +65,7 @@ if (typeof define === 'function' && define.amd) {
         'left': $this.css('position') === 'absolute' ? 0 : $this.position().left,
         'background-color': opts.bgColor.toString(),
         'width': $this.outerWidth(),
-        'height': $this.outerHeight() === 0 ? '100%' : $this.outerHeight(),
+        'height': $this.outerHeight() === 0 ? '100%' : $this.outerHeight() + 1,
         'marginTop': $this.css('marginTop'),
         'marginRight': $this.css('marginRight'),
         'marginBottom': $this.css('marginBottom'),
