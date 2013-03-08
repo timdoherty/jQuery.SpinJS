@@ -50,7 +50,7 @@ if (typeof define === 'function' && define.amd) {
       if (opts === false) { return; }
 
       opts = opts || {};
-      $.extend(opts, defaults);
+      opts = $.extend({}, defaults, opts);
 
       var $bgEl = $('<div>');
       $bgEl.addClass('loadingBG');
@@ -61,12 +61,19 @@ if (typeof define === 'function' && define.amd) {
         '-ms-filter': 'progid:DXImageTransform.Microsoft.Alpha(opacity=' + opts.opacity * 10 + ')', /*IE8*/
         'position': 'absolute',
         'z-index': 9999,
-        'top': $this.css('position') === 'absolute' ? 0 : $this.position().top,
+        'top': $this.css('position') === 'absolute' ? 0 : $this.position().top - 1,
         'left': $this.css('position') === 'absolute' ? 0 : $this.position().left,
         'background-color': opts.bgColor.toString(),
         'width': $this.outerWidth(),
-        'height': $this.outerHeight() === 0 ? '100%' : $this.outerHeight()
+        'height': $this.outerHeight() === 0 ? '100%' : $this.outerHeight(),
+        'marginTop': $this.css('marginTop'),
+        'marginRight': $this.css('marginRight'),
+        'marginBottom': $this.css('marginBottom'),
+        'marginLeft': $this.css('marginLeft')
       });
+
+      delete opts.bgColor;
+      delete opts.opacity;
 
       //call spin.js
       $data.spinner = new Spinner(opts).spin(this);

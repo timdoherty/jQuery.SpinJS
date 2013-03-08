@@ -4,6 +4,8 @@ A jQuery plugin for  Felix Gnass' excellent spin.js: http://fgnass.github.com/sp
 
 The plugin adds a background div with configurable color and transparency, and supports AMD.
 
+View a demo [here](http://tdoherty.github.com/jQuery.SpinJS)
+
 ## Getting Started
 Download the [production version][min] or the [development version][max].
 
