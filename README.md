@@ -1,6 +1,8 @@
 # jQuery Spin
 
-A jQuery plugin for Spin.js
+A jQuery plugin for  Felix Gnass' excellent spin.js: http://fgnass.github.com/spin.js/
+
+The plugin adds a background div with configurable color and transparency, and supports AMD.
 
 ## Getting Started
 Download the [production version][min] or the [development version][max].
