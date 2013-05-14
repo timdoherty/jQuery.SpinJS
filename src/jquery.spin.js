@@ -11,13 +11,13 @@
 
 //AMD support - works with or without AMD
 (function (factory) {
-if (typeof define === 'function' && define.amd) {
-    // AMD. Register as an anonymous module.
-    define(['jquery', 'spin'], factory);
-} else {
-    // Browser globals
-    factory(jQuery, Spinner);
-}
+  if (typeof define === 'function' && define.amd) {
+      // AMD. Register as an anonymous module. Aliases for jQuery.js and Spin.js
+      define(['jquery', 'spin'], factory);
+  } else {
+      // Browser globals
+      factory(jQuery, Spinner);
+  }
 }(function($, Spinner) {
 
   $.fn.spin = function (opts) {
