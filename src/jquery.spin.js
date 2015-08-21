@@ -52,6 +52,8 @@
       opts = opts || {};
       opts = $.extend({}, defaults, opts);
 
+      var thisCSSPosition = $this.css('position');
+
       var $bgEl = $('<div>');
       $bgEl.addClass('loadingBG');
       $bgEl.css({
@@ -61,9 +63,9 @@
         '-ms-filter': 'progid:DXImageTransform.Microsoft.Alpha(opacity=' + opts.opacity * 10 + ')', /*IE8*/
         'position': 'absolute',
         'z-index': 9999,
-        'top': $this.css('position') === 'absolute' ? 0 : $this.position().top - 1,
-        'left': $this.css('position') === 'absolute' ? 0 : $this.position().left,
-        'background-color': opts.bgColor.toString(),
+        'top': thisCSSPosition === 'absolute' || thisCSSPosition === 'relative' ? 0 : $this.position().top - 1,
+        'left': thisCSSPosition === 'absolute' || thisCSSPosition === 'relative' ? 0 : $this.position().left,
+	'background-color': opts.bgColor.toString(),
         'width': $this.outerWidth(),
         'height': $this.outerHeight() === 0 ? '100%' : $this.outerHeight() + 1,
         'marginTop': $this.css('marginTop'),
