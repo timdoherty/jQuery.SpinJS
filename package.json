@@ -1,11 +1,15 @@
 {
-  "name": "jquery-plugin",
-  "version": "0.0.0-ignored",
+  "name": "jquery.spinjs",
+  "version": "0.1.0",
   "engines": {
     "node": ">= 0.8.0"
   },
   "scripts": {
     "test": "grunt qunit"
+  },
+   "dependencies": {
+    "jquery": "latest",
+    "spin.js": "latest"
   },
   "devDependencies": {
     "grunt-contrib-jshint": "~0.1.1",
